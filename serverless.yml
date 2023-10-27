@@ -1,0 +1,23 @@
+service: aws-back-culqui
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  memorySize: 128
+  region: sa-east-1
+  stage: ${opt:stage, 'dev'}
+
+package:
+  individually: true
+  patterns:
+    - "!node_modules/**"
+    - "!.serverless/**"
+    - "!package-lock.json"
+    - "!tsconfig.json"
+    - "!package.json"
+    - "!README.md"
+
+functions:
+  - ${file(./structure-aws/functions/create-token.yml)}
+  - ${file(./structure-aws/functions/get-card.yml)}

@@ -1,0 +1,19 @@
+card:
+  handler: card.lambda_handler
+  description: create token
+  timeout: 15
+  package:
+    patterns:
+      - src/handlers/create-token.ts
+  events:
+    - http:
+        path: /create-token
+        integration: lambda
+        method: post
+        cors: true
+        request:
+          schemas:
+            application/json: 
+              name: create token
+              description: 'Create token'
+              schema: ${file(./structure-aws/models/structure-token.json)}
