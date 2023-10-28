@@ -2,6 +2,8 @@ getCard:
   handler: src/handlers/get-card.lambda_handler
   description: Get card
   timeout: 15
+  layers:
+    - arn:aws:lambda:sa-east-1:970024327233:layer:mongoose-layer:1
   events:
     - http:
         path: /card
