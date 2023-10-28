@@ -25,7 +25,7 @@ package:
 
 custom:
   serverlessSsmFetch:
-    DB_CNN_STRING: /db_cnn_string
+    DB_CNN_STRING: /db_cnn_string~true
 
 functions:
   - ${file(./structure-aws/functions/create-token.yml)}
