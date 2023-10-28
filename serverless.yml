@@ -8,6 +8,11 @@ provider:
   region: sa-east-1
   stage: ${opt:stage, 'dev'}
 
+plugins:
+  - serverless-offline
+  - serverless-plugin-typescript
+  - serverless-ssm-fetch
+
 package:
   individually: true
   patterns:
@@ -17,6 +22,10 @@ package:
     - "!tsconfig.json"
     - "!package.json"
     - "!README.md"
+
+custom:
+  serverlessSsmFetch:
+    DB_CNN_STRING: /db_cnn_string
 
 functions:
   - ${file(./structure-aws/functions/create-token.yml)}

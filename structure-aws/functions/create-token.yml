@@ -1,10 +1,7 @@
-card:
-  handler: card.lambda_handler
+createToken:
+  handler: src/handlers/create-token.lambda_handler
   description: create token
   timeout: 15
-  package:
-    patterns:
-      - src/handlers/create-token.ts
   events:
     - http:
         path: /create-token

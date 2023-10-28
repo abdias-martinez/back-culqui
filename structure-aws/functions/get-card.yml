@@ -1,10 +1,7 @@
 getCard:
-  handler: merchants.lambda_handler
+  handler: src/handlers/get-card.lambda_handler
   description: Get card
   timeout: 15
-  package:
-    patterns:
-      - src/handlers/get-card.ts
   events:
     - http:
         path: /card

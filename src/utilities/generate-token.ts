@@ -13,5 +13,5 @@ export const generateToken = () => {
       }
     }
   
-    return  `pk_test_${token}`
+    return  token
   }

@@ -1,17 +1,11 @@
 import * as mongoose from 'mongoose';
 
-let conn = null;
-
-const connectDatabase = async ()=> {
-    if (conn = null) {
-        console.log('creating database...');
-        conn = await mongoose.connect(process.env.DB || '',  {
-            serverSelectionTimeoutMS: 5000,
-        });
-        return conn;
+export default async () => {
+    try {
+        const db = await mongoose.connect(process.env.DB_CNN_STRING || '', {});
+        console.log(`Mongo DB online to database ${db.connection.name}`)
+    } catch (err) {
+        console.log(err)
+        throw new Error('Error en la conección de la db ')
     }
-
-    console.log('Connection already');
 }
-
-export default  connectDatabase;
