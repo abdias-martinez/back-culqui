@@ -2,6 +2,8 @@ createToken:
   handler: src/handlers/create-token.lambda_handler
   description: create token
   timeout: 15
+  layers:
+    - arn:aws:lambda:sa-east-1:970024327233:layer:mongoose-layer:1
   events:
     - http:
         path: /create-token
@@ -11,6 +13,6 @@ createToken:
         request:
           schemas:
             application/json: 
-              name: create token
+              name: createTokenModel
               description: 'Create token'
               schema: ${file(./structure-aws/models/structure-token.json)}

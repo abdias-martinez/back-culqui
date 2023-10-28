@@ -8,10 +8,10 @@
           "type": "string"
         },
         "expiration_month": {
-            "type": "string"
+            "type": "number"
         },
         "expiration_year": {
-            "type": "string"
+            "type": "number"
         },
         "email": {
           "type": "string"
