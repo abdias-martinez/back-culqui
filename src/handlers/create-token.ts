@@ -7,7 +7,7 @@ import { generateToken } from '../utilities/generate-token'
 
 export const lambda_handler = async (event: APIGatewayProxyEvent) => {
     try {
-        const tokenCommerce = event.headers['c-token'] || '';
+        const tokenCommerce = event.headers['Authorization'] || '';
         const body: any = event.body;
 
         // valida el comercio

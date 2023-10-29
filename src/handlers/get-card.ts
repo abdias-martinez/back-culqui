@@ -6,8 +6,8 @@ import { validateTokenCommerce } from '../utilities/validators'
 
 export const lambda_handler = async (event: APIGatewayProxyEvent) => {
     try {
-        const tokenCommerce = event.headers['c-token'] || '';
-        const tokenCard = event.headers['x-token'] || '';
+        const tokenCommerce = event.headers['Authorization'] || '';
+        const tokenCard = event.headers['X-Amz-Security-Token'] || '';
 
          // valida el comercio
          if(!validateTokenCommerce(tokenCommerce)) {
