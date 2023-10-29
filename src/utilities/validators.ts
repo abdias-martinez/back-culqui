@@ -17,8 +17,6 @@ export const isValidCreditCard = ({ card_number, cvv, expiration_month, expirati
     const validateYear = !isNaN(expiration_year) && expiration_year >= CURRENT_YEAR && expiration_year <= CURRENT_YEAR + 5
     const validateEmail = /^[^\s@]+@(gmail\.com|hotmail\.com|yahoo\.es)$/.test(email);
 
-    console.log(isValidCardNumber(card_number), 'tarjeta no valida')
-
     if (!isValidCardNumber(card_number) ) {
         valid = false;
         message = 'Número de tarjeta no válida'
