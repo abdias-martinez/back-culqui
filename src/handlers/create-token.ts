@@ -28,6 +28,7 @@ export const lambda_handler = async (event: APIGatewayProxyEvent) => {
         const newCard = new Card({ token: tokenCard, ...body});
 
         await newCard.save();
+        console.log('llega')
 
         return MessageUtil.successfulResponse('Registrado correctamente', tokenCard);
     } catch (error) {
