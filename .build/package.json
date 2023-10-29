@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "deploy": "serverless deploy"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.125",
+    "@types/node": "^20.8.9",
+    "@types/serverless": "^3.12.17",
+    "serverless-ssm-fetch": "^2.0.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "mongoose": "^7.6.3",
+    "serverless": "^3.36.0",
+    "serverless-offline": "^13.2.0",
+    "serverless-plugin-typescript": "^2.1.5"
+  }
+}

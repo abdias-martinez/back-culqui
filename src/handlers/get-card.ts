@@ -20,7 +20,7 @@ export const lambda_handler = async (event: APIGatewayProxyEvent) => {
         // buscar tarjeta con token
         const findCard = await Card.findOne({ token: tokenCard }).select('card_number cvv expiration_month expiration_year email token').exec();
         if(findCard === null) {
-            return MessageUtil.notFoundErrorResponse('Lo sentimos, El elemento solicitado ya no está disponible debido a su expiración.')
+            return MessageUtil.notFoundErrorResponse('La tarjeta solicitada ya no está disponible debido a su expiración.')
         }
 
         return MessageUtil.successfulResponse('Registro encontrado', findCard);
